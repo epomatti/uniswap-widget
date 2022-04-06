@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Widget from '../components/widget'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -16,6 +16,9 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Uniswap Widget
         </h1>
+
+        <Widget />
+
       </main>
     </div>
   )
