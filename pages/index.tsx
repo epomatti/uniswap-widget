@@ -8,6 +8,8 @@ import { useDarkMode } from 'usehooks-ts'
 const Home: NextPage = () => {
   const { isDarkMode, toggle } = useDarkMode();
   return (
+
+
     <div className={styles.container}>
       <Head>
         <title>Uniswap Widget</title>
@@ -18,7 +20,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
 
         <DarkModeToggle isDarkMode={isDarkMode} toggle={toggle}></DarkModeToggle>
-
+        
         <h1 className={styles.title}>
           Uniswap Widget
         </h1>

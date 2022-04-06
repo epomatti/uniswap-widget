@@ -9,6 +9,7 @@ export interface DarkModeToggleProps {
 export const DarkModeToggle = (props: DarkModeToggleProps) => {
   return (
     <Switch
+      className="toggle"
       checked={props.isDarkMode}
       onChange={() => props.toggle()}
       unCheckedChildren={'☀️'}
