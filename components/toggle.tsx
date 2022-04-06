@@ -1,13 +1,16 @@
 import React from "react";
-import { useDarkMode } from 'usehooks-ts'
 import { Switch } from 'antd';
 
-export const DarkModeToggle: React.FC = () => {
-  const { isDarkMode, toggle } = useDarkMode();
+export interface DarkModeToggleProps {
+  isDarkMode: boolean;
+  toggle: Function;
+}
+
+export const DarkModeToggle = (props: DarkModeToggleProps) => {
   return (
     <Switch
-      checked={isDarkMode}
-      onChange={() => toggle()}
+      checked={props.isDarkMode}
+      onChange={() => props.toggle()}
       unCheckedChildren={'☀️'}
       checkedChildren={'🌙'}
     />

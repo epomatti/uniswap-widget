@@ -1,10 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { DarkModeToggle } from '../components/toggle'
-import Widget from '../components/widget'
+import { Widget } from '../components/widget'
 import styles from '../styles/Home.module.css'
+import { useDarkMode } from 'usehooks-ts'
 
 const Home: NextPage = () => {
+  const { isDarkMode, toggle } = useDarkMode();
   return (
     <div className={styles.container}>
       <Head>
@@ -15,13 +17,13 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
 
-        {/* <DarkModeToggle /> */}
+        <DarkModeToggle isDarkMode={isDarkMode} toggle={toggle}></DarkModeToggle>
 
         <h1 className={styles.title}>
           Uniswap Widget
         </h1>
 
-        <Widget />
+        <Widget isDarkMode={isDarkMode} />
 
       </main>
     </div>
