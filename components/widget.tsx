@@ -15,8 +15,7 @@ const Widget = () => {
     setProvider(new ethers.providers.Web3Provider(window.ethereum));
   }, []);
 
-  const { isDarkMode } = useDarkMode();
-  const theme = isDarkMode ? darkTheme : lightTheme;
+  const theme = useDarkMode() ? darkTheme : lightTheme;
 
   return (
     <div className="Uniswap">
