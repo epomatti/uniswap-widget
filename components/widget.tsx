@@ -5,7 +5,7 @@ import { ethers } from "ethers";
 
 declare var window: any;
 
-const jsonRpcEndpoint = process.env.NEXT_PUBLIC_POLYGON_NODE;
+const jsonRpcEndpoint = process.env.NEXT_PUBLIC_ETHEREUM_NODE;
 
 export interface WidgetProps {
   isDarkMode: boolean;
@@ -25,7 +25,6 @@ export const Widget = (props: WidgetProps) => {
       <SwapWidget
         provider={provider}
         jsonRpcEndpoint={jsonRpcEndpoint}
-        width={400}
         theme={theme}
       />
     </div>
