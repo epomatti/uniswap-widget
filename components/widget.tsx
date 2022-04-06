@@ -2,16 +2,18 @@ import { darkTheme, lightTheme, SwapWidget } from '@uniswap/widgets';
 import '@uniswap/widgets/fonts.css';
 import { useEffect, useState } from 'react';
 import { useDarkMode } from 'usehooks-ts'
+import { ethers } from "ethers";
 
 declare var window: any;
 
 const jsonRpcEndpoint = process.env.NEXT_PUBLIC_POLYGON_NODE;
 
 const Widget = () => {
-  const [provider, setProvider] = useState();
+
+  const [provider, setProvider] = useState<ethers.providers.Web3Provider>();
   useEffect(() => {
-    setProvider(window.ethereum);
-  }, [provider]);
+    setProvider(new ethers.providers.Web3Provider(window.ethereum));
+  }, []);
 
   const { isDarkMode } = useDarkMode();
   const theme = isDarkMode ? darkTheme : lightTheme;
@@ -21,8 +23,8 @@ const Widget = () => {
       <SwapWidget
         provider={provider}
         jsonRpcEndpoint={jsonRpcEndpoint}
-        // width={450}
-        // theme={theme}
+        width={400}
+        theme={theme}
       />
     </div>
   )
